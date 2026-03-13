@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Upload Seating File</h2>
+
+<form id="uploadForm">
+<input type="file" name="file"/>
+<button>Upload</button>
+</form>
+
+<div id="link"></div>
+
+<script>
+document.getElementById("uploadForm").onsubmit=async e=>{
+
+e.preventDefault()
+
+const form=new FormData(e.target)
+
+const res=await fetch("/api/upload",{
+method:"POST",
+body:form
+})
+
+const data=await res.json()
+
+document.getElementById("link").innerHTML="Share Link: "+data.link
+
+}
+</script>
+
+</body>
+</html>

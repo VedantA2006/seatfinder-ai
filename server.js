@@ -26,7 +26,8 @@ console.log("MongoDB Connected")
 app.use("/api", uploadRoute)
 app.use("/api", studentRoute)
 app.use("/api", authRoute)
-
+app.use(express.json({ limit: "20mb" }))
+app.use(express.urlencoded({ limit: "20mb", extended: true }))
 app.get("/",(req,res)=>{
 res.sendFile(path.join(__dirname,"public","index.html"))
 })

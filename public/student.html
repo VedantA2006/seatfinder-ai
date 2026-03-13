@@ -22,7 +22,7 @@ async function find(){
 
 const prn=document.getElementById("prn").value
 
-const res=await fetch(`/api/seat/${exam}/${prn}`)
+const res = await fetch(`https://seatfinder-ai.onrender.com/api/seat/${exam}/${prn}`)
 
 const data=await res.json()
 

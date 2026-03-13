@@ -22,7 +22,7 @@ e.preventDefault()
 
 const form=new FormData(e.target)
 
-const res=await fetch("/api/upload",{
+const res = await fetch("https://seatfinder-ai.onrender.com/api/upload",{
 method:"POST",
 body:form
 })

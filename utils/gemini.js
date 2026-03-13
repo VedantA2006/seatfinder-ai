@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 
 async function parseAI(text){
 
-const model = genAI.getGenerativeModel({model:"gemini-1.5-flash"})
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" })
 
 const prompt = `
 You are an AI that extracts exam seating arrangements.
